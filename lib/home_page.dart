@@ -94,3 +94,4 @@ buildBotaoCard(String texto, Color cor) {
     ),
   );
 }
+
