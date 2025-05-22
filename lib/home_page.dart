@@ -18,6 +18,14 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+class AppColors {
+  static const Color azulPetroleo = Color(0xFF00253B);  // Cor principal para fontes e links
+  static const Color brancoGelo = Color(0xFFF5F9FA);    // Cor de fundo geral da aplicação
+  static const Color cinzaNeutro = Color(0xFF9BA0A0);   // Fundo de caixas, cards e painéis
+  static const Color verdeMenta = Color(0xFF78AB89);    // Subtítulos, destaques sutis
+  static const Color rosaSuave = Color(0xFFB68892);     // Títulos e elementos de destaque
+}
+
 buildAppBar(){
   return AppBar(
     toolbarHeight: 75,
