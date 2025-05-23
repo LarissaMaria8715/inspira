@@ -19,9 +19,9 @@ class _HomePageState extends State<HomePage> {
 }
 
 class AppColors {
-  static const Color azulPetroleo = Color(0xFF00253B);  // Cor principal para fontes e links
-  static const Color brancoGelo = Color(0xFFF5F9FA);    // Cor de fundo geral da aplicação
-  static const Color cinzaNeutro = Color(0xFF9BA0A0);   // Fundo de caixas, cards e painéis
+  static const Color azulPetroleo = Color(0xFF00253B);  // fontes e links
+  static const Color brancoGelo = Color(0xFFF5F9FA);    // fundo geral da aplicação
+  static const Color cinzaNeutro = Color(0xFF3A3E3E);   // Fundo de caixas, cards e painéis
   static const Color verdeMenta = Color(0xFF78AB89);    // Subtítulos, destaques sutis
   static const Color rosaSuave = Color(0xFFB68892);     // Títulos e elementos de destaque
 }
@@ -29,7 +29,7 @@ class AppColors {
 buildAppBar(){
   return AppBar(
     toolbarHeight: 75,
-    backgroundColor: Color(0xFF35607D),
+    backgroundColor: Color(0xFF00253B),
     centerTitle: false,
     leading: const Icon(
       Icons.local_hospital_outlined,
@@ -47,59 +47,38 @@ buildAppBar(){
   );
 }
 
-buildBody(){
-  return Wrap(
-    alignment: WrapAlignment.center,
-    spacing: 10,
-    runSpacing: 15,
-    children: [
-      buildBotaoCard("Botão 1", Color(0xFF35607D)),
-      buildBotaoCard("Botão 2", Colors.green),
-      buildBotaoCard("Botão 3", Colors.deepPurple),
-      buildBotaoCard("Botão 4", Colors.orange),
-      buildBotaoCard("Botão 5", Colors.teal),
-      buildBotaoCard("Botão 6", Colors.redAccent),
-    ],
-  );
-}
-
-buildBotaoCard(String texto, Color cor) {
-  return Container(
-    width: 220,
-    height: 140,
-    margin: EdgeInsets.all(5),
-    decoration: BoxDecoration(
-      color: cor,
-      borderRadius: BorderRadius.circular(12),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black26,
-          blurRadius: 4,
-          offset: Offset(2, 2),
-        ),
+buildBody() {
+  return Padding(
+    padding: const EdgeInsets.all(16),
+    child: Wrap(
+      spacing: 16,
+      runSpacing: 16,
+      alignment: WrapAlignment.center,
+      children: [
+        buildBotaoCard("MEU PERFIL"),
+        buildBotaoCard("CONFIGURAÇÕES"),
+        buildBotaoCard("QUESTIONARIO"),
+        buildBotaoCard("ACOMPANHAMENTO"),
+        buildBotaoCard("CONTATOS"),
+        buildBotaoCard("METAS"),
       ],
     ),
-    child: TextButton(
-      style: TextButton.styleFrom(
-        foregroundColor: Colors.white,
-        padding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-      onPressed: () {
-        // ação do botão
-      },
-      child: Center(
-        child: Text(
-          texto,
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    ),
   );
 }
 
+
+buildBotaoCard(String texto) {
+  return Card(
+    child: Container(
+      width: 200,
+      height: 140,
+      child: Center(child: Text(texto,
+      style: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: AppColors.azulPetroleo ,
+      ),
+      )),
+    ),
+  );
+}
